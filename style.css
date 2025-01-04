@@ -194,6 +194,41 @@ body {
     color: #555;
 }
 
+/* Responsive Design */
+@media (max-width: 768px) {
+    .pricing-card {
+        padding: 15px;
+        width: 50%;
+    }
+
+    .pricing-wrapper {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .pricing-card-title {
+        font-size: 18px;
+    }
+}
+
+/* Short Screens Adaptation */
+@media (max-height: 600px) {
+    .section {
+        padding: 20px 10px;
+        overflow-y: auto;
+    }
+
+    .pricing-card {
+        padding: 10px;
+    }
+
+    .btn-primary {
+        padding: 8px 16px;
+        font-size: 12px;
+    }
+}
+
+
 /* Footer */
 .footer {
     background-color: #333;
@@ -296,9 +331,11 @@ body {
     padding: 20px; /* Add padding if needed */
 }
 
+/* About Section */
 .about-img-holder {
     animation: fadeIn 1.5s ease-out;
 }
+
 @keyframes fadeIn {
     from {
         opacity: 0;
@@ -309,65 +346,21 @@ body {
         transform: scale(1);
     }
 }
-  
-  .about-img-holder .about-img {
+
+.about-img-holder .about-img {
     width: 100%;
     margin-bottom: 40px;
-  }
+}
 
-  .about {
-    display: -webkit-box;
-    display: -ms-flexbox;
-    display: -webkit-flex;
+.about {
     display: flex;
-    -webkit-box-align: center;
-    -webkit-align-items: center;
-        -ms-flex-align: center;
-            align-items: center;
+    align-items: center;
     text-align: left;
-  }
+}
 
-  .about-caption {
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
-  }
-
-  .text-center {
-    text-align: center !important;
-  }
-
-  .container1 {
-    min-width: 992px !important;
-  }
-
-  .section-sm {
-    padding: 40px 0 !important;
-  }
-
-  .bg-primary {
-    background-color: #e6bc9aa0 !important;
-  }
-
-  .d-table-row {
-    display: table-row !important;
-  }
-
-  .align-items-center {
-    -webkit-box-align: center !important;
-    -webkit-align-items: center !important;
-        -ms-flex-align: center !important;
-            align-items: center !important;
-  }
-
-  .text-light {
-    color: #f8f9fa !important;
-  }
-  
-  a.text-light:hover, a.text-light:focus {
-    color: #cbd3da !important;
-  }
+.about-caption {
+    flex-grow: 1;
+}
 
 /* Hire Me Section */
 .hire-section {
@@ -418,51 +411,38 @@ body {
 }
 
 .testimonial-card {
-    background: white;
-    border-radius: 12px;
+    background: #fff;
     padding: 20px;
-    width: 320px;
+    border-radius: 10px;
     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.testimonial-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-}
-
-.testimonial-card-img-holder {
-    margin-bottom: 15px;
-}
-
-.testimonial-card-img {
-    width: 80px;
-    height: 80px;
-    border-radius: 50%;
-    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
-}
-
-.testimonial-card-body {
+    width: 100%;
+    max-width: 350px;
     text-align: center;
 }
 
-.testimonial-card-subtitle {
-    font-size: 16px;
-    color: #555;
-    margin-bottom: 12px;
+.testimonial-card img {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 15px;
 }
 
-.testimonial-card-title {
+.testimonial-card h3 {
     font-size: 18px;
-    font-weight: bold;
-    color: #333;
+    font-weight: 600;
+    margin-bottom: 10px;
 }
 
-.testimonial-card-role {
+.testimonial-card p {
     font-size: 14px;
-    color: #999;
+    color: #777;
 }
 
+.testimonial-card span {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+}
 /* Styles pour la galerie */
 .gallery {
     padding: 40px;
