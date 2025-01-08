@@ -13,6 +13,10 @@ body {
     color: #333;
     line-height: 1.6;
 }
+.text-center {
+    text-align: center;
+  }
+  
 
 /* Header */
 .header {
@@ -112,18 +116,18 @@ body {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    z-index: -1;
+    z-index: -1; /* Places the video behind other content*/
 }
 
 .hero .content {
-    z-index: 2;
+    z-index: 2;/* Ensures the content appears above the video background.*/
     position: relative;
     animation: fadeInUp 1s ease-out;
 }
 
 .btn-primary {
     display: inline-block;
-    padding: 12px 24px;
+    padding: 12px 24px;/*Adds 12px of padding on the top and bottom and 24px on the left and right*/
     background: linear-gradient(90deg, #ff7e5f, #feb47b);
     color: white;
     border: none;
@@ -135,7 +139,7 @@ body {
 }
 
 .btn-primary:hover {
-    transform: scale(1.1);
+    transform: scale(1.1); /* the button increases in size */
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
 }
 
@@ -218,10 +222,6 @@ body {
         overflow-y: auto;
     }
 
-    .pricing-card {
-        padding: 10px;
-    }
-
     .btn-primary {
         padding: 8px 16px;
         font-size: 12px;
@@ -278,12 +278,12 @@ body {
 
 
 .featured-artwork {
-    display: flex;
+    display: flex; /*creates a flexible layout that makes it easier to position and align items within a container.*/
     justify-content: center;
     align-items: center;
     padding: 50px 20px;
     background-color: #f9f9f9;
-    gap: 40px;
+    gap: 40px;/*space between the items*/
 }
 
 .artwork-image img {
@@ -382,26 +382,6 @@ body {
     transition: all 0.3s ease;
 }
 
-.hire-section .hire-btn:hover {
-    background: #f4a261;
-    color: white;
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
-}
-
-.hire-decor {
-    position: absolute;
-    bottom: -30px;
-    right: -30px;
-    opacity: 0.6;
-}
-
-.hire-icon {
-    width: 200px;
-    height: auto;
-    transform: rotate(-20deg);
-}
-
 /* Testimonial Section */
 .testimonial-wrapper {
     display: flex;
@@ -443,6 +423,7 @@ body {
     color: #333;
     font-weight: bold;
 }
+
 /* Styles pour la galerie */
 .gallery {
     padding: 40px;
