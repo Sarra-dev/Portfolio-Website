@@ -33,7 +33,16 @@ try {
     if (!in_array('subscription_date', $columns)) {
         $db->exec("ALTER TABLE users ADD COLUMN subscription_date DATETIME DEFAULT NULL");
     }
-               
+    // Créer la table message_users si elle n'existe pas
+    $db->exec("CREATE TABLE IF NOT EXISTS message_users (
+        id INT AUTO_INCREMENT PRIMARY KEY,
+        username VARCHAR(50) NOT NULL,
+        email VARCHAR(100) NOT NULL,
+        telephone VARCHAR(20) NOT NULL,
+        message TEXT NOT NULL,
+        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
+        is_read BOOLEAN DEFAULT FALSE
+    )");      
 } catch(PDOException $e) {
     die("Database connection failed: " . $e->getMessage());
 }
