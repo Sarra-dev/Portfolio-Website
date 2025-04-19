@@ -29,7 +29,7 @@ Built with performance and aesthetics in mind, this project is ideal for creativ
 ---
 
 ### Installation  
-1. Clone the repo : git clone https://github.com/your-username/artist-portfolio.git    
+1. Clone the repo : git clone https://github.com/Sarra-dev/Portfolio-Website.git    
 2. Install dependencies:  
    cd artist-portfolio  
    npm install  
