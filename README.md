@@ -28,11 +28,6 @@ Built with performance and aesthetics in mind, this project is ideal for creativ
 
 ---
 
-## 🚀 Getting Started  
-### Prerequisites  
-- Node.js (if using JavaScript)  
-- Git  
-
 ### Installation  
 1. Clone the repo : git clone https://github.com/your-username/artist-portfolio.git    
 2. Install dependencies:  
