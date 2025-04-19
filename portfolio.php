@@ -32,6 +32,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                 <li><a href="about.php">About</a></li>
                 <li><a href="portfolio.php" class="active">Portfolio</a></li>
                 <li><a href="contact.php">Contact Me</a></li>
+                <li><a href="profile.php">My Profile</a></li>
                 <?php if($isLoggedIn): ?>
                     <li class="user-greeting">
                         <span>Welcome, <?php echo $username; ?></span>

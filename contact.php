@@ -64,6 +64,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <li><a href="about.php">About</a></li>
                 <li><a href="portfolio.php">Portfolio</a></li>
                 <li><a href="contact.php" class="active">Contact Me</a></li>
+                <li><a href="profile.php">My Profile</a></li>
                 <?php if($isLoggedIn): ?>
                     <li class="user-greeting">
                         <span>Welcome, <?php echo $username; ?></span>

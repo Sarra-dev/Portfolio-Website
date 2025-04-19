@@ -20,6 +20,7 @@ require_once '../auth/auth_functions.php';
             <li><a href="about.php">About</a></li>
             <li><a href="portfolio.php">Portfolio</a></li>
             <li><a href="contact.php">Contact Me</a></li>
+            <li><a href="profile.php">My Profile</a></li>
             <?php if(isLoggedIn()): ?>
                 <li class="auth-user">
                     <span>Welcome, <?php echo htmlspecialchars($_SESSION['username']); ?></span>
