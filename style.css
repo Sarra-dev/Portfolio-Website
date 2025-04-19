@@ -524,3 +524,265 @@ textarea {
     color: #666;
     text-align: center;
 }
+
+/* Authentication Styles */
+.auth-container {
+    max-width: 500px;
+    margin: 50px auto;
+    padding: 30px;
+    background: white;
+    border-radius: 12px;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+    animation: fadeInUp 0.6s ease-out;
+}
+
+.auth-title {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #333;
+    font-size: 28px;
+    font-weight: 600;
+}
+
+.auth-form .form-group {
+    margin-bottom: 20px;
+}
+
+.auth-form label {
+    display: block;
+    margin-bottom: 8px;
+    color: #555;
+    font-weight: 500;
+}
+
+.auth-form input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: all 0.3s;
+}
+
+.auth-form input:focus {
+    border-color: #f4a261;
+    box-shadow: 0 0 0 3px rgba(244, 162, 97, 0.2);
+    outline: none;
+}
+
+.auth-submit-btn {
+    width: 100%;
+    padding: 14px;
+    background: linear-gradient(90deg, #ff7e5f, #feb47b);
+    color: white;
+    border: none;
+    border-radius: 30px;
+    font-size: 16px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s;
+    margin-top: 10px;
+}
+
+.auth-submit-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 15px rgba(255, 126, 95, 0.4);
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 25px;
+    color: #666;
+}
+
+.auth-switch a {
+    color: #f4a261;
+    text-decoration: none;
+    font-weight: 500;
+    transition: color 0.3s;
+}
+
+.auth-switch a:hover {
+    color: #ff7e5f;
+    text-decoration: underline;
+}
+
+/* Alert Messages */
+.auth-alert {
+    padding: 15px;
+    border-radius: 8px;
+    margin-bottom: 25px;
+    text-align: center;
+    font-weight: 500;
+}
+
+.auth-alert.error {
+    background-color: #ffebee;
+    color: #d32f2f;
+    border: 1px solid #ffcdd2;
+}
+
+.auth-alert.success {
+    background-color: #e8f5e9;
+    color: #388e3c;
+    border: 1px solid #c8e6c9;
+}
+
+/* User Greeting in Header */
+.user-greeting {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    color: #555;
+}
+
+.user-greeting span {
+    font-weight: 500;
+}
+
+.logout-btn {
+    padding: 6px 12px;
+    background-color: #ffebee;
+    color: #d32f2f;
+    border-radius: 20px;
+    text-decoration: none;
+    font-size: 14px;
+    transition: all 0.3s;
+}
+
+.logout-btn:hover {
+    background-color: #d32f2f;
+    color: white;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+.auth-container {
+    margin: 30px 20px;
+    padding: 25px;
+}
+
+.auth-title {
+    font-size: 24px;
+}
+
+.user-greeting {
+    flex-direction: column;
+    gap: 5px;
+    text-align: center;
+}
+}
+
+/* Animation for auth forms */
+@keyframes fadeInUp {
+from {
+    opacity: 0;
+    transform: translateY(20px);
+}
+to {
+    opacity: 1;
+    transform: translateY(0);
+}
+}
+/* Styles pour les messages d'alerte */
+.alert {
+padding: 12px 20px;
+border-radius: 8px;
+margin-bottom: 20px;
+text-align: center;
+}
+
+.alert.success {
+background-color: #d4edda;
+color: #155724;
+border: 1px solid #c3e6cb;
+}
+
+.alert.error {
+background-color: #f8d7da;
+color: #721c24;
+border: 1px solid #f5c6cb;
+}
+
+/* Style pour l'abonnement actuel */
+.current-subscription {
+margin-top: 30px;
+padding: 15px;
+background-color: #f8f9fa;
+border-radius: 8px;
+text-align: center;
+}
+
+.current-subscription p {
+margin: 5px 0;
+color: #495057;
+}
+
+.current-subscription strong {
+color: #212529;
+}
+
+/* Style pour le bouton du plan actuel */
+button[disabled], .btn-primary[disabled] {
+background: #6c757d !important;
+cursor: not-allowed;
+}
+/* Styles spécifiques pour la modale */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 1000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 25px;
+    border-radius: 10px;
+    width: 90%;
+    max-width: 500px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+.modal-buttons {
+    display: flex;
+    justify-content: flex-end;
+    gap: 10px;
+    margin-top: 20px;
+}
+
+.modal-btn {
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s;
+}
+
+.modal-btn.confirm {
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+}
+
+.modal-btn.cancel {
+    background-color: #f1f1f1;
+    color: #333;
+    border: 1px solid #ddd;
+}
+
+.modal-btn:hover {
+    opacity: 0.9;
+    transform: translateY(-1px);
+}
+    
+    /* Désactiver le bouton pour le plan actuel */
+    .current-plan-btn {
+        background-color: #6c757d !important;
+        cursor: not-allowed;
+    }
