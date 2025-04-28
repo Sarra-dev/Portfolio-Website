@@ -1,51 +1,3 @@
-<?php
-// Début du script PHP pour gérer l'authentification et la base de données
-require_once 'auth/auth_functions.php';
-
-// Vérifier si l'utilisateur est connecté, sinon rediriger vers login.php
-if(!isLoggedIn()) {
-    header("Location: auth/login.php");
-    exit();
-}
-
-// Connexion à la base de données et création des tables si elles n'existent pas
-try {
-    $db = new PDO("mysql:host=localhost", 'root', '');
-    $db->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
-    
-    // Créer la base de données si elle n'existe pas
-    $db->exec("CREATE DATABASE IF NOT EXISTS portfolio_db");
-    $db->exec("USE portfolio_db");
-    
-    // Créer la table testimonials si elle n'existe pas
-    $db->exec("CREATE TABLE IF NOT EXISTS testimonials (
-        id INT AUTO_INCREMENT PRIMARY KEY,
-        client_name VARCHAR(100) NOT NULL,
-        client_role VARCHAR(100) NOT NULL,
-        testimonial_text TEXT NOT NULL,
-        avatar_path VARCHAR(255) NOT NULL,
-        created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP
-    )");
-    
-    // Insérer des témoignages par défaut si la table est vide
-    $stmt = $db->query("SELECT COUNT(*) FROM testimonials");
-    if($stmt->fetchColumn() == 0) {
-        $db->exec("INSERT INTO testimonials (client_name, client_role, testimonial_text, avatar_path) VALUES
-            ('Emily Reb', 'CEO, Creative Studio', 'Working with Sarra was an absolute delight! Her talent, attention to detail, and passion for her art truly shine through in every piece she creates.', 'assets/avatar3.jpg'),
-            ('John Doe', 'Art Enthusiast', 'Sarra''s artwork is nothing short of magical! She captured my vision perfectly and brought it to life with such elegance and creativity.', 'assets/avatar2.jpg')
-        ");
-    }
-    
-} catch(PDOException $e) {
-    die("Database error: " . $e->getMessage());
-}
-
-// Récupérer les témoignages depuis la base de données
-$testimonials = $db->query("SELECT * FROM testimonials")->fetchAll(PDO::FETCH_ASSOC);
-
-// Récupérer le nom d'utilisateur pour l'affichage
-$username = htmlspecialchars($_SESSION['username']);
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -160,7 +112,6 @@ $username = htmlspecialchars($_SESSION['username']);
                 <img src="assets/social-media.png" alt="LinkedIn">
             </a>
         </div>
-        <p>© <?php echo date('Y'); ?> Art Realm. All Rights Reserved.</p>
     </footer>
 
 </body>
