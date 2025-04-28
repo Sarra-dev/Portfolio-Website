@@ -1,9 +1,4 @@
-<?php
-// portfolio.php
-require_once 'auth/auth_functions.php';
-$isLoggedIn = isLoggedIn();
-$username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
-?>
+
 
 <!DOCTYPE html>
 <html lang="en">
@@ -107,16 +102,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                 ]
             ];
 
-            // Affichage dynamique des œuvres
-            foreach($artworks as $art): ?>
-                <div class="gallery-item">
-                    <img src="<?php echo htmlspecialchars($art['image']); ?>" alt="<?php echo htmlspecialchars($art['title']); ?>">
-                    <p class="description">
-                        <b><?php echo htmlspecialchars($art['title']); ?>:</b><br>
-                        <?php echo htmlspecialchars($art['desc']); ?>
-                    </p>
-                </div>
-            <?php endforeach; ?>
+            
         </div>
     </section>
 
@@ -133,7 +119,7 @@ $username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
                 <img src="assets/social-media.png" alt="LinkedIn">
             </a>
         </div>
-        <p>© <?php echo date('Y'); ?> Art Realm. All Rights Reserved.</p>
+        <p>© Art Realm. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
