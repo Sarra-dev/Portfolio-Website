@@ -1,40 +1,3 @@
-<?php
-// contact.php
-require_once 'auth/config.php';
-require_once 'auth/auth_functions.php';
-
-$isLoggedIn = isLoggedIn();
-$username = $isLoggedIn ? htmlspecialchars($_SESSION['username']) : '';
-
-// Traitement du formulaire
-$message = '';
-if($_SERVER['REQUEST_METHOD'] == 'POST') {
-    $username_input = trim($_POST['username']);
-    $email = trim($_POST['email']);
-    $telephone = trim($_POST['tel']);
-    $message_content = trim($_POST['message']);
-
-    // Validation des données
-    if(empty($username_input) || empty($email) || empty($telephone) || empty($message_content)) {
-        $message = '<div class="alert error">All fields are required!</div>';
-    } elseif(!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-        $message = '<div class="alert error">Please enter a valid email address!</div>';
-    } else {
-        try {
-            $stmt = $db->prepare("INSERT INTO message_users (username, email, telephone, message) 
-                                VALUES (?, ?, ?, ?)");
-            $stmt->execute([$username_input, $email, $telephone, $message_content]);
-            
-            $message = '<div class="alert success">Your message has been sent successfully!</div>';
-            
-            // Réinitialiser les champs après succès
-            $_POST = array();
-        } catch(PDOException $e) {
-            $message = '<div class="alert error">Error: ' . $e->getMessage() . '</div>';
-        }
-    }
-}
-?>
 
 <!DOCTYPE html>
 <html lang="en">
@@ -125,7 +88,7 @@ if($_SERVER['REQUEST_METHOD'] == 'POST') {
                 <img src="assets/social-media.png" alt="LinkedIn">
             </a>
         </div>
-        <p>© <?php echo date('Y'); ?> Art Realm. All Rights Reserved.</p>
+        <p>©  Art Realm. All Rights Reserved.</p>
     </footer>
 </body>
 </html>
